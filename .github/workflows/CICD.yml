@@ -39,7 +39,8 @@ jobs:
 
       - name: build the project and genaret JAR          
         run: |
-            mvn clean install
+            chmod +x ./cicd/pipeline.sh
+            ./cicd/pipeline.sh
 
 #  deploy:
   
