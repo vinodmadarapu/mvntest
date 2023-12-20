@@ -37,5 +37,9 @@ jobs:
           echo "project structure is"
           ls -a
 
+      - name: build the project and genaret JAR          
+        run: |
+            mvn clean install
+
 #  deploy:
   
