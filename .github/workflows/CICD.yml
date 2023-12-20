@@ -1,0 +1,45 @@
+name: "hellow world project build and deploy"
+run-name: "Deploy hellow world to azure webapp"
+
+on:
+    workflow_dispatch:
+      inputs:
+        environemnt:
+          description: env
+          type: choice
+          required: false
+          options:
+            - test
+            - stage
+            - prod
+
+        region:
+          description: reg
+          type: choice
+          required: false
+          options:
+            - east
+            - west
+
+jobs:
+  build:
+    name: build project
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout repository ${GITHuB.REPOSITORY}
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: list the project
+        run: |
+          echo "project structure is"
+          ls -a
+
+      - name: build the project and genaret JAR          
+        run: |
+            mvn clean install
+
+#  deploy:
+  
