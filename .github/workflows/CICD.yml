@@ -41,6 +41,7 @@ jobs:
         run: |
             chmod +x ./cicd/pipeline.sh
             ./cicd/pipeline.sh
+        shell: bash            
         env:
            GITHuB_WORKSPACE: ${github.workflow} 
 
