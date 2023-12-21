@@ -9,9 +9,9 @@ JFROG_DEFAULT_REPO=dev-releases
 
 #insall jfrog
 curl -sS -fL https://getcli.jfrog.io | bash -s v2 "2.46.2"
-chmod +x jfrog
-sudo mv jfrog /usr/local/bin
-jfrog --version
+# chmod +x jfrog
+# sudo mv jfrog /usr/local/bin
+# jfrog --version
 pwd
 echo "jfrog cmd is - $JFROG_COMMAND"
 echo "github workspace is cmd is - ${GITHUB_WORKSPACE}"
