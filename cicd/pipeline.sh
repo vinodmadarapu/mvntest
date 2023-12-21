@@ -6,7 +6,7 @@ JFROG_URL=https://svk2015.jfrog.io/artifactory
 JFROG_COMMAND=${GITHUB_WORKSPACE}/jfrog
 JFROG_DEFAULT_REPO=dev-releases
 
-mvn help:evaluate -Dexpression=project.version -q -DforceStdout
+POM_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
 #echo "pom version is ${POM_VERSION}"
 
 
