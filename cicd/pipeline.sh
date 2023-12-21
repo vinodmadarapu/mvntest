@@ -19,4 +19,7 @@ $JFROG_COMMAND config show
 
 # build anbd uppload
 $JFROG_COMMAND rt mvn-config --repo-deploy-releases=$JFROG_DEFAULT_REPO --repo-deploy-snapshots=snapshots
+$JFROG_COMMAND rt mvn install -DskipTests --batch-mode -s settings.xml --build-name="mvntest" --build-number=1
+cd jfrog
+ls-la
 
