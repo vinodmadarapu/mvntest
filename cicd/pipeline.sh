@@ -18,5 +18,5 @@ $JFROG_COMMAND config add --artifactory-url=${JFROG_URL} --access-token=cmVmdGtu
 $JFROG_COMMAND config show
 
 # build anbd uppload
-$jFROG_COMMAND rt mvn-config --repo-deploy-releases=$JFROG_DEFAULT_REPO --repo-deploy-snapshots=snapshots
+$JFROG_COMMAND rt mvn-config --repo-deploy-releases=$JFROG_DEFAULT_REPO --repo-deploy-snapshots=snapshots
 
