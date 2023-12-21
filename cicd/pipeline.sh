@@ -11,7 +11,6 @@ JFROG_DEFAULT_REPO=dev-releases
 curl -sS -fL https://getcli.jfrog.io | bash -s v2 "2.46.2"
 chmod +x jfrog
 sudo mv jfrog /usr/local/bin
-rm -rf jfrog
 jfrog --version
 pwd
 echo "jfrog cmd is - $JFROG_COMMAND"
