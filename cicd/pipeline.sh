@@ -18,7 +18,7 @@ curl -sS -fL https://getcli.jfrog.io | bash -s v2 "2.46.2"
 # $JFROG_COMMAND config show
 
 #POM_VERSION= $(mvn --batch-mode -s settings.xml help:evaluate -Dexpression=project.version -q -DforceStdout)
-POM_VERSION= $(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+POM_VERSION=mvn help:evaluate -Dexpression=project.version -q -DforceStdout
 
 echo "pom version is $POM_VERSION"
 # POM_ARTIFACT_ID=$(mvn --batch-mode -s settings.xml help:evaluate -Dexpression=project.artifactId -q DforceStdout)
