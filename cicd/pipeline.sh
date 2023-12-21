@@ -13,9 +13,10 @@ curl -sS -fL https://getcli.jfrog.io | bash -s v2 "2.46.2"
 # sudo mv jfrog /usr/local/bin
 # jfrog --version
 pwd
-echo "jfrog cmd is - $JFROG_COMMAND"
-echo "github workspace is cmd is - ${GITHUB_WORKSPACE}"
 $JFROG_COMMAND --version 
 $JFROG_COMMAND config add --artifactory-url=${JFROG_URL} --access-token=cmVmdGtuOjAxOjE3MzQ2NDQzMTU6YzJybVRCUFFTeXZFZDBub0lBSHEzWXBaWWVP
 $JFROG_COMMAND config show
+
+# build anbd uppload
+$jFROG_COMMAND rt mvn-config --repo-deploy-releases=$JFROG_DEFAULT_REPO --repo-deploy-snapshots=snapshots
 
