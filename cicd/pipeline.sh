@@ -17,7 +17,8 @@ $JFROG_COMMAND --version
 $JFROG_COMMAND config add --artifactory-url=${JFROG_URL} --access-token=cmVmdGtuOjAxOjE3MzQ2NDQzMTU6YzJybVRCUFFTeXZFZDBub0lBSHEzWXBaWWVP
 $JFROG_COMMAND config show
 
-# POM_VERSION=$(mvn --batch-mode -s settings.xml help:evaluate -Dexpression=project.version -q -DforceStdout)
+# POM_VERSION=
+echo $(mvn --batch-mode -s settings.xml help:evaluate -Dexpression=project.version)
 # POM_ARTIFACT_ID=$(mvn --batch-mode -s settings.xml help:evaluate -Dexpression=project.artifactId -q DforceStdout)
 # NEW_VERSION=${POM_VERSION}-$(date + %Y-%m-%d-%H-%M)
 
