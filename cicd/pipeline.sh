@@ -13,6 +13,9 @@ chmod +x jfrog
 sudo mv jfrog /usr/local/bin
 rm -rf jfrog
 jfrog --version
+pwd
+echo "jfrog cmd is - $JFROG_COMMAND"
+echo "github workspace is cmd is - ${GITHUB_WORKSPACE}"
 $JFROG_COMMAND --version 
 $JFROG_COMMAND config add --artifactory-url=${JFROG_URL} --access-token=cmVmdGtuOjAxOjE3MzQ2NDQzMTU6YzJybVRCUFFTeXZFZDBub0lBSHEzWXBaWWVP
 $JFROG_COMMAND config show
