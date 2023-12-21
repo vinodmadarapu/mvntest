@@ -3,13 +3,13 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <servers>
     <server>
-      <username>vinod.madarapu@gmail.com</username>
-      <password>Sansat@2k</password>
+      <username>jf_token1</username>
+      <password>Welcome@123</password>
       <id>central</id>
     </server>
     <server>
-      <username>vinod.madarapu@gmail.com</username>
-      <password>Sansat@2k</password>
+      <username>jf_token1</username>
+      <password>Welcome@123</password>
       <id>snapshots</id>
     </server>
   </servers>
