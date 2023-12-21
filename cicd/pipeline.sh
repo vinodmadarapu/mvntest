@@ -13,7 +13,7 @@ chmod +x jfrog
 sudo mv jfrog /usr/local/bin
 rm -rf jfrog
 jfrog --version
-# $JFROG_COMMAND --version 
-# $JFROG_COMMAND config add --artifactory-url=${JFROG_URL} --access-token=cmVmdGtuOjAxOjE3MzQ2NDQzMTU6YzJybVRCUFFTeXZFZDBub0lBSHEzWXBaWWVP
-# $JFROG_COMMAND config show
+$JFROG_COMMAND --version 
+$JFROG_COMMAND config add --artifactory-url=${JFROG_URL} --access-token=cmVmdGtuOjAxOjE3MzQ2NDQzMTU6YzJybVRCUFFTeXZFZDBub0lBSHEzWXBaWWVP
+$JFROG_COMMAND config show
 
