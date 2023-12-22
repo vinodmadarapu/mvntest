@@ -3,13 +3,13 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <servers>
     <server>
-      <username>kavya</username>
-      <password>cmVmdGtuOjAxOjE3MzQ3OTkyNDM6eld3NEx6YzVRRjZmRktIT01rSG1uMFRreGNk</password>
+      <username>mvn-dep-usr</username>
+      <password>Sansat@2k</password>
       <id>central</id>
     </server>
     <server>
-      <username>kavya</username>
-      <password>cmVmdGtuOjAxOjE3MzQ3OTkyNDM6eld3NEx6YzVRRjZmRktIT01rSG1uMFRreGNk</password>
+      <username>mvn-dep-usr</username>
+      <password>Sansat@2k</password>
       <id>snapshots</id>
     </server>
   </servers>
@@ -22,13 +22,13 @@
           </snapshots>
           <id>central</id>
           <name>svk2015-libs-release</name>
-          <url>https://svk2015.jfrog.io/artifactory/svk2015-libs-release</url>
+          <url>https://svk2015.jfrog.io/artifactory/svk2015-libs-release-local</url>
         </repository>
         <repository>
           <snapshots />
           <id>snapshots</id>
           <name>svk2015-libs-snapshot</name>
-          <url>https://svk2015.jfrog.io/artifactory/svk2015-libs-snapshot</url>
+          <url>https://svk2015.jfrog.io/artifactory/svk2015-libs-snapshot-local</url>
         </repository>
       </repositories>
       <pluginRepositories>
@@ -38,13 +38,13 @@
           </snapshots>
           <id>central</id>
           <name>svk2015-libs-release</name>
-          <url>https://svk2015.jfrog.io/artifactory/svk2015-libs-release</url>
+          <url>https://svk2015.jfrog.io/artifactory/svk2015-libs-release-local</url>
         </pluginRepository>
         <pluginRepository>
           <snapshots />
           <id>snapshots</id>
           <name>svk2015-libs-snapshot</name>
-          <url>https://svk2015.jfrog.io/artifactory/svk2015-libs-snapshot</url>
+          <url>https://svk2015.jfrog.io/artifactory/svk2015-libs-snapshot-local</url>
         </pluginRepository>
       </pluginRepositories>
       <id>artifactory</id>
