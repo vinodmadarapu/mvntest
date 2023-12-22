@@ -7,9 +7,9 @@ JFROG_COMMAND=${GITHUB_WORKSPACE}/jfrog
 JFROG_DEFAULT_REPO=dev-releases
 
 POM_VERSION=$(mvn --batch-mode -s settings.xml  help:evaluate -Dexpression=project.version -q -DforceStdout)
-POM_ARTIFACT_ID="satyam"
+POM_ARTIFACT_ID="jb-hello-world-maven"
 #mvn help:evaluate -Dexpression=project.artifactId -q DforceStdout
-NEW_VERSION=${POM_VERSION}-$(date )
+NEW_VERSION=${POM_VERSION}-"123"
 echo pom version is ${POM_VERSION}
 echo pom arti is ${NEW_VERSION}
 
