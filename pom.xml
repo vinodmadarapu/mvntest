@@ -49,3 +49,10 @@
         </plugins>
     </build>
 </project>
+<distributionManagement>
+    <repository>
+        <id>central</id>
+        <name>a0uaopv4wdlhb-artifactory-primary-0-releases</name>
+        <url>https://svk2015.jfrog.io/artifactory/svk2015-libs-release</url>
+    </repository>
+</distributionManagement>
