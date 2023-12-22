@@ -5,7 +5,7 @@ cp ./cicd/settings.xml settings.xml
 
 JFROG_URL=https://svk2015.jfrog.io/artifactory
 JFROG_COMMAND=${GITHUB_WORKSPACE}/jfrog
-JFROG_DEFAULT_REPO=svk2015-libs-release
+JFROG_DEFAULT_REPO=svk2015-libs-release-local
 
 POM_VERSION=$(mvn --batch-mode -s settings.xml  help:evaluate -Dexpression=project.version -q -DforceStdout)
 POM_ARTIFACT_ID="jb-hello-world-maven"
@@ -21,7 +21,7 @@ chmod +x jfrog
 #sudo mv jfrog /usr/local/bin
 pwd
 $JFROG_COMMAND --version 
-$JFROG_COMMAND config add --artifactory-url=${JFROG_URL} --access-token=cmVmdGtuOjAxOjE3MzQ3OTkyNDM6eld3NEx6YzVRRjZmRktIT01rSG1uMFRreGNk
+$JFROG_COMMAND config add --artifactory-url=${JFROG_URL} --access-token=Sansat@2k
 $JFROG_COMMAND config show
 
 
