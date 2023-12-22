@@ -17,7 +17,7 @@ echo pom arti is ${NEW_VERSION}
 #insall jfrog
 curl -sS -fL https://getcli.jfrog.io | bash -s v2 "2.46.2"
 chmod +x jfrog
-sudo mv jfrog /usr/local/bin
+#sudo mv jfrog /usr/local/bin
 pwd
 $JFROG_COMMAND --version 
 $JFROG_COMMAND config add --artifactory-url=${JFROG_URL} --access-token=cmVmdGtuOjAxOjE3MzQ2NDQzMTU6YzJybVRCUFFTeXZFZDBub0lBSHEzWXBaWWVP
