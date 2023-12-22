@@ -8,7 +8,7 @@ JFROG_DEFAULT_REPO=dev-releases
 
 POM_VERSION=$(mvn --batch-mode -s settings.xml  help:evaluate -Dexpression=project.version -q -DforceStdout)
 mvn help:evaluate -Dexpression=project.artifactId -q DforceStdout
-NEW_VERSION=${POM_VERSION}-$(date)
+NEW_VERSION=${POM_VERSION}-$(date + '%Y-%m-%d-%H-%M')
 echo pom version is ${POM_VERSION}
 echo pom arti is ${NEW_VERSION}
 
