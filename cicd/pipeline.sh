@@ -10,7 +10,7 @@ POM_VERSION=$(mvn --batch-mode -s settings.xml  help:evaluate -Dexpression=proje
 POM_ARTIFACT_ID=$(mvn --batch-mode -s settings.xml help:evaluate -Dexpression=project.artifactId -q DforceStdout)
 # NEW_VERSION=${POM_VERSION}-$(date)
 echo pom version is ${POM_VERSION}
-echo pom artifact is ${POM_ARTIFACT_ID}
+#echo pom artifact is ${POM_ARTIFACT_ID}
 
 
 #insall jfrog
