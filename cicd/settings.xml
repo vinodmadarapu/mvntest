@@ -4,12 +4,12 @@
   <servers>
     <server>
       <username>vinod.madarapu@gmail.com</username>
-      <password>cmVmdGtuOjAxOjE3MzQ2NDQzMTU6YzJybVRCUFFTeXZFZDBub0lBSHEzWXBaWWVP</password>
+      <password>cmVmdGtuOjAxOjE3MzQ3OTgyOTA6T2dtZFJyS05vdmpDQ2l4UUt1bDNBVDNXbG9w</password>
       <id>central</id>
     </server>
     <server>
       <username>vinod.madarapu@gmail.com</username>
-      <password>cmVmdGtuOjAxOjE3MzQ2NDQzMTU6YzJybVRCUFFTeXZFZDBub0lBSHEzWXBaWWVP</password>
+      <password>cmVmdGtuOjAxOjE3MzQ3OTgyOTA6T2dtZFJyS05vdmpDQ2l4UUt1bDNBVDNXbG9w</password>
       <id>snapshots</id>
     </server>
   </servers>
@@ -30,10 +30,6 @@
           <name>svk2015-libs-snapshot</name>
           <url>https://svk2015.jfrog.io/artifactory/svk2015-libs-snapshot</url>
         </repository>
-        <repository>
-          <id>dev-releases</id>
-          <url>https://svk2015.jfrog.io/artifactory/dev-releases</url>
-        </repository>          
       </repositories>
       <pluginRepositories>
         <pluginRepository>
@@ -50,10 +46,6 @@
           <name>svk2015-libs-snapshot</name>
           <url>https://svk2015.jfrog.io/artifactory/svk2015-libs-snapshot</url>
         </pluginRepository>
-        <pluginrepository>
-          <id>dev-releases</id>
-          <url>https://svk2015.jfrog.io/artifactory/dev-releases</url>
-        </pluginrepository>          
       </pluginRepositories>
       <id>artifactory</id>
     </profile>
