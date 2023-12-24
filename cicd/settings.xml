@@ -12,6 +12,11 @@
       <password>Sansat@2k</password>
       <id>snapshots</id>
     </server>
+    <server>
+      <username>mvn-dep-usr</username>
+      <password>Sansat@2k</password>
+      <id>central</id>
+    </server>      
   </servers>
   <profiles>
     <profile>
