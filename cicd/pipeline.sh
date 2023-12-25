@@ -17,7 +17,7 @@ NEW_VERSION=${POM_VERSION}-"1234"
 echo pom version is ${POM_VERSION}
 echo pom arti is ${NEW_VERSION}
 echo jfcmd is ${JFROG_COMMAND}
-echo grpid is ${GROUP_ID}
+echo grpid is ${GROUP_ID_Replaced}
 
 
 #insall jfrog
