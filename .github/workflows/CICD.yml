@@ -54,7 +54,8 @@ jobs:
             ./cicd/pipeline.sh
         shell: bash            
         env:
-           GITHuB_WORKSPACE: ${{github.workflow}} 
+           GITHuB_WORKSPACE: ${{github.workflow}}
+           ENVIRONMENT: ${github.event.inputs.environemnt}
 
 #  deploy:
   
