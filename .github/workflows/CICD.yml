@@ -9,9 +9,9 @@ on:
           type: choice
           required: false
           options:
-            - test
+            - TEST
             - stage
-            - prod
+            - PROD
 
         region:
           description: reg
