@@ -41,5 +41,6 @@ elif [[($ENVIRONMENT == "PROD")]]
 then
 mkdir prodjar
 $JFROG_COMMAND rt dl "*${JFROG_PROD_REPO}/${GroupId_Replaced}/${POM_ARTIFACT_ID}*.jar" prodjar/ --sort-by created --sort-order=desc --limit=1
+ls -l
 fi
 
