@@ -3,20 +3,15 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <servers>
     <server>
-      <username>mvn-dep-usr</username>
-      <password>Sansat@2k</password>
+      <username>vinod.madarapu@gmail.com</username>
+      <password>cmVmdGtuOjAxOjE3MzUwNDAwOTY6TTM1bXA5ZE1rcHM4b2MzdjgwU1EyeVRJNmtm</password>
       <id>central</id>
     </server>
     <server>
-      <username>mvn-dep-usr</username>
-      <password>Sansat@2k</password>
+      <username>vinod.madarapu@gmail.com</username>
+      <password>cmVmdGtuOjAxOjE3MzUwNDAwOTY6TTM1bXA5ZE1rcHM4b2MzdjgwU1EyeVRJNmtm</password>
       <id>snapshots</id>
     </server>
-    <server>
-      <username>mvn-dep-usr</username>
-      <password>Sansat@2k</password>
-      <id>central</id>
-    </server>      
   </servers>
   <profiles>
     <profile>
@@ -26,14 +21,14 @@
             <enabled>false</enabled>
           </snapshots>
           <id>central</id>
-          <name>svk2015-libs-release</name>
-          <url>https://svk2015.jfrog.io/artifactory/svk2015-libs-release-local</url>
+          <name>my-mvn-virtual-releases</name>
+          <url>https://svk2015.jfrog.io/artifactory/my-mvn-virtual-releases</url>
         </repository>
         <repository>
           <snapshots />
           <id>snapshots</id>
-          <name>svk2015-libs-snapshot</name>
-          <url>https://svk2015.jfrog.io/artifactory/svk2015-libs-snapshot-local</url>
+          <name>my-mvn-virtual-snapshots</name>
+          <url>https://svk2015.jfrog.io/artifactory/my-mvn-virtual-snapshots</url>
         </repository>
       </repositories>
       <pluginRepositories>
@@ -42,14 +37,14 @@
             <enabled>false</enabled>
           </snapshots>
           <id>central</id>
-          <name>svk2015-libs-release</name>
-          <url>https://svk2015.jfrog.io/artifactory/svk2015-libs-release-local</url>
+          <name>my-mvn-virtual-releases</name>
+          <url>https://svk2015.jfrog.io/artifactory/my-mvn-virtual-releases</url>
         </pluginRepository>
         <pluginRepository>
           <snapshots />
           <id>snapshots</id>
-          <name>svk2015-libs-snapshot</name>
-          <url>https://svk2015.jfrog.io/artifactory/svk2015-libs-snapshot-local</url>
+          <name>my-mvn-virtual-snapshots</name>
+          <url>https://svk2015.jfrog.io/artifactory/my-mvn-virtual-snapshots</url>
         </pluginRepository>
       </pluginRepositories>
       <id>artifactory</id>
