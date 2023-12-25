@@ -5,7 +5,7 @@ cp ./cicd/settings.xml settings.xml
 
 JFROG_URL=https://svk2015.jfrog.io/artifactory
 JFROG_COMMAND=${GITHUB_WORKSPACE}/jfrog
-JFROG_DEFAULT_REPO=my-mvn-virtual-snapshots
+JFROG_DEFAULT_REPO=my-mvn-virtual-releases
 
 POM_VERSION=$(mvn --batch-mode -s settings.xml  help:evaluate -Dexpression=project.version -q -DforceStdout)
 POM_ARTIFACT_ID="jb-hello-world-maven"
@@ -28,9 +28,8 @@ $JFROG_COMMAND config show
 
 # build and uppload
 $JFROG_COMMAND rt mvn-config --repo-deploy-releases=$JFROG_DEFAULT_REPO --repo-deploy-snapshots=snapshots
-# $JFROG_COMMAND rt mvn "clean install -f pom.xml --batch-mode -e" ./mvn-config
-#$JFROG_COMMAND rt mvn install -DskipTests --batch-mode -s settings.xml --build-name=${POM_ARTIFACT_ID} --build-number=${NEW_VERSION}
-$JFROG_COMMAND rt mvn clean install
+$JFROG_COMMAND rt mvn install -DskipTests --batch-mode -s settings.xml --build-name=${POM_ARTIFACT_ID} --build-number=${NEW_VERSION}
+#$JFROG_COMMAND rt mvn clean install
 #jfrog rt mvn clean install
 
 
