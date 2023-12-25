@@ -55,7 +55,7 @@ jobs:
         shell: bash            
         env:
            GITHuB_WORKSPACE: ${{github.workflow}}
-           ENVIRONMENT: ${github.event.inputs.environemnt}
+           ENVIRONMENT: ${{github.event.inputs.environemnt}}
 
 #  deploy:
   
