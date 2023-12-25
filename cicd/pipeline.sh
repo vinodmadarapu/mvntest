@@ -30,13 +30,13 @@ $JFROG_COMMAND config show
 
 
 # build and uppload
-if [[$ENVIRONMENT=="TEST"]]
+if ($ENVIRONMENT == "TEST")
 then
     $JFROG_COMMAND rt mvn-config --repo-deploy-releases=$JFROG_DEFAULT_REPO --repo-deploy-snapshots=snapshots
     $JFROG_COMMAND rt mvn install -DskipTests --batch-mode -s settings.xml --build-name=${POM_ARTIFACT_ID} --build-number=${NEW_VERSION}
     $JFROG_COMMAND rt build-publish ${POM_ARTIFACT_ID} ${NEW_VERSION}
     $JFROG_COMMAND rt build-promote ${POM_ARTIFACT_ID} ${NEW_VERSION} $JFROG_PROD_REPO --source-repo=$JFROG_DEFAULT_REPO -copy=true --status=Promoted
-elif [[$ENVIRONMENT=="PROD"]]
+elif ($ENVIRONMENT=="PROD")
 then
     $JFROG_COMMAND rt dl "*${JFROG_PROD_REPO}/${GroupId_Replaced}/${POM_ARTIFACT_ID}*.jar" prodjar/ --sort-by created --sort-order=desc --limit=1
 fi
