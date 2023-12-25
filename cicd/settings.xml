@@ -22,13 +22,13 @@
           </snapshots>
           <id>central</id>
           <name>my-mvn-virtual-releases</name>
-          <url>https://svk2015.jfrog.io/artifactory/my-mvn-virtual-releases</url>
+          <url>https://svk2015.jfrog.io/artifactory/my-mvn-local-releases</url>
         </repository>
         <repository>
           <snapshots />
           <id>snapshots</id>
           <name>my-mvn-virtual-snapshots</name>
-          <url>https://svk2015.jfrog.io/artifactory/my-mvn-virtual-snapshots</url>
+          <url>https://svk2015.jfrog.io/artifactory/my-mvn-local-snapshots</url>
         </repository>
       </repositories>
       <pluginRepositories>
@@ -38,13 +38,13 @@
           </snapshots>
           <id>central</id>
           <name>my-mvn-virtual-releases</name>
-          <url>https://svk2015.jfrog.io/artifactory/my-mvn-virtual-releases</url>
+          <url>https://svk2015.jfrog.io/artifactory/my-mvn-local-releases</url>
         </pluginRepository>
         <pluginRepository>
           <snapshots />
           <id>snapshots</id>
           <name>my-mvn-virtual-snapshots</name>
-          <url>https://svk2015.jfrog.io/artifactory/my-mvn-virtual-snapshots</url>
+          <url>https://svk2015.jfrog.io/artifactory/my-mvn-local-snapshots</url>
         </pluginRepository>
       </pluginRepositories>
       <id>artifactory</id>
