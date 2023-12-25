@@ -37,6 +37,7 @@ then
     $JFROG_COMMAND rt build-publish ${POM_ARTIFACT_ID} ${NEW_VERSION}
     $JFROG_COMMAND rt build-promote ${POM_ARTIFACT_ID} ${NEW_VERSION} $JFROG_PROD_REPO --source-repo=$JFROG_DEFAULT_REPO -copy=true --status=Promoted
 elif [[$environment=="PROD"]]
+then
     $JFROG_COMMAND rt dl "*${JFROG_PROD_REPO}/${GroupId_Replaced}/${POM_ARTIFACT_ID}*.jar" prodjar/ --sort-by created --sort-order=desc --limit=1
 fi
 
