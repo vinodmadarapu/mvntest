@@ -37,6 +37,17 @@ jobs:
           echo "project structure is"
           ls -a
 
+      - name: setup maven
+        uses: stCarolas/setup-maven@4.5
+        with:
+            maven-version: 3.8.7
+
+      - name: setup maven action
+        uses: s4u/setup-maven-action@v1.7.0
+        with:
+            java-version: 11.0.17
+            maven-version: 3.8.7
+
       - name: build the project and genaret JAR          
         run: |
             chmod +x ./cicd/pipeline.sh
