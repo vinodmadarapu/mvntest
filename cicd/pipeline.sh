@@ -13,6 +13,7 @@ POM_ARTIFACT_ID="jb-hello-world-maven"
 NEW_VERSION=${POM_VERSION}-"123"
 echo pom version is ${POM_VERSION}
 echo pom arti is ${NEW_VERSION}
+echo jfcmd is ${JFROG_COMMAND}
 
 
 #insall jfrog
