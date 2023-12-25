@@ -10,7 +10,7 @@ JFROG_DEFAULT_REPO=my-mvn-local-releases
 POM_VERSION=$(mvn --batch-mode -s settings.xml  help:evaluate -Dexpression=project.version -q -DforceStdout)
 POM_ARTIFACT_ID="jb-hello-world-maven"
 #mvn help:evaluate -Dexpression=project.artifactId -q DforceStdout
-NEW_VERSION=${POM_VERSION}-"123"
+NEW_VERSION=${POM_VERSION}-"1234"
 echo pom version is ${POM_VERSION}
 echo pom arti is ${NEW_VERSION}
 echo jfcmd is ${JFROG_COMMAND}
