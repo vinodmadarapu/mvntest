@@ -40,7 +40,7 @@ $JFROG_COMMAND rt build-promote ${POM_ARTIFACT_ID} ${NEW_VERSION} $JFROG_PROD_RE
 elif [[($ENVIRONMENT == "PROD")]]
 then
 mkdir prodjar
-$JFROG_COMMAND rt dl "*${JFROG_PROD_REPO}/${GroupId_Replaced}/${POM_ARTIFACT_ID}*.jar" prodjar/ --sort-by created --sort-order=desc --limit=1
+$JFROG_COMMAND rt dl "*${JFROG_PROD_REPO}/${GROUP_ID_Replaced}/${POM_ARTIFACT_ID}*.jar" prodjar/ --sort-by created --sort-order=desc --limit=1
 cd prodjar
 ls -l
 fi
