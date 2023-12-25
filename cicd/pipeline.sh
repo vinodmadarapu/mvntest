@@ -42,6 +42,7 @@ then
 mkdir prodjar
 $JFROG_COMMAND rt dl "*${JFROG_PROD_REPO}/${GROUP_ID_Replaced}/${POM_ARTIFACT_ID}*.jar" prodjar/ --sort-by created --sort-order=desc --limit=1
 cd prodjar
-ls -l
+pwd
+ls -a
 fi
 
