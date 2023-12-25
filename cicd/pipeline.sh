@@ -1,6 +1,7 @@
 echo "start process pipeline"
 #!/bin/bash
 
+$environment = $env.ENVIRONMENT
 cp ./cicd/settings.xml settings.xml
 
 JFROG_URL=https://svk2015.jfrog.io/artifactory
