@@ -8,7 +8,7 @@ USERNAME=fa1085d1-a654-4325-8a45-6d5b9fe0534d
 PASSWORD=cND8Q~oYKod4L0RPwxrNEKjCSbRiqLsqt8ZItdB7
 
 az login --service-principal --username=${USERNAME} --password=${PASSWORD} --tenant=${TENENTID}
-az account set --subscription ${SU}
+az account set --subscription "${SU}"
 
 # az webapp deploy --resource-group= --name= --src-path=init-sh --type="static"  --target-path="init.sh"
 # az webapp deploy source config-zip --resource-group= --name=  --src=  --debug
