@@ -61,7 +61,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:  
-      - name: build the project and genaret JAR          
+      - name: bdeploy JAR          
         run: |
             chmod +x ./cicd/deploy.sh
             ./cicd/deploy.sh
