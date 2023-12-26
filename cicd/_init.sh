@@ -1,0 +1,1 @@
+echo "insite init file"
