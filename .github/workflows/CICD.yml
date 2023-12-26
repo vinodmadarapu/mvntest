@@ -25,7 +25,6 @@ jobs:
   build:
     name: build project
     runs-on: ubuntu-latest
-
     steps:
       - name: checkout repository ${GITHuB.REPOSITORY}
         uses: actions/checkout@v4
@@ -57,5 +56,17 @@ jobs:
            GITHuB_WORKSPACE: ${{github.workflow}}
            ENVIRONMENT: ${{github.event.inputs.environemnt}}
 
-#  deploy:
+  deploy:
+    name: deploy project
+    runs-on: ubuntu-latest
+    needs: build
+    steps:  
+      - name: build the project and genaret JAR          
+        run: |
+            chmod +x ./cicd/deploy.sh
+            ./cicd/deploy.sh
+        shell: bash            
+        env:
+           GITHuB_WORKSPACE: ${{github.workflow}}
+           ENVIRONMENT: ${{github.event.inputs.environemnt}}
   
