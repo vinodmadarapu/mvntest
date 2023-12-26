@@ -44,5 +44,7 @@ $JFROG_COMMAND rt dl "*${JFROG_PROD_REPO}/${GROUP_ID_Replaced}/${POM_ARTIFACT_ID
 cd prodjar
 pwd
 ls -l
+cd org
+ls -l
 fi
 
