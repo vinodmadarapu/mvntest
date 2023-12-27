@@ -40,7 +40,7 @@ $JFROG_COMMAND rt dl "*${JFROG_PROD_REPO}/${GROUP_ID_Replaced}/${POM_ARTIFACT_ID
 # echo prodjar/${GROUP_ID_Replaced}/${POM_ARTIFACT_ID}/*/*.jar > ./cicd/buildjarNameFile.txt
 deploy_zip_name="azure_artifacts.zip"
 # zip -j ${deploy_zip_name} $artifact_dir/${GROUP_ID_Replaced}/${POM_ARTIFACT_ID}/${POM_ARTIFACT_ID}*.jar
-cd $artifact_dir/${GROUP_ID_Replaced}/${POM_ARTIFACT_ID}
+cd $artifact_dir/${GROUP_ID_Replaced}/${POM_ARTIFACT_ID}/0.2.0/
 pwd
 ls -l
 
