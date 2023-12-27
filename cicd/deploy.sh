@@ -8,7 +8,7 @@ SU="Azure subscription 1"
 USERNAME=fa1085d1-a654-4325-8a45-6d5b9fe0534d
 PASSWORD=cND8Q~oYKod4L0RPwxrNEKjCSbRiqLsqt8ZItdB7
 
-
+echo "step1"
 
 ls -l
 JFROG_URL=https://svk2015.jfrog.io/artifactory
@@ -20,6 +20,9 @@ POM_ARTIFACT_ID="jb-hello-world-maven"
 GROUP_ID=$(mvn --batch-mode -s settings.xml  help:evaluate -Dexpression=project.groupId -q -DforceStdout)
 GROUP_ID_Replaced=${GROUP_ID//.//}
 
+
+echo "step2"
+
 #insall jfrog
 curl -sS -fL https://getcli.jfrog.io | bash -s v2 "2.46.2"
 chmod +x jfrog
@@ -30,7 +33,7 @@ $JFROG_COMMAND config add --artifactory-url=${JFROG_URL} --access-token="cmVmdGt
 $JFROG_COMMAND config show
 
 
-
+echo "step3"
 artifact_dir="artifact"
 mkdir $artifact_dir
 $JFROG_COMMAND rt dl "*${JFROG_PROD_REPO}/${GROUP_ID_Replaced}/${POM_ARTIFACT_ID}*.jar" $artifact_dir/ --sort-by created --sort-order=desc --limit=1
