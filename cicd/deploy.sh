@@ -8,14 +8,36 @@ SU="Azure subscription 1"
 USERNAME=fa1085d1-a654-4325-8a45-6d5b9fe0534d
 PASSWORD=cND8Q~oYKod4L0RPwxrNEKjCSbRiqLsqt8ZItdB7
 
-az login --service-principal --username=${USERNAME} --password=${PASSWORD} --tenant=${TENENTID}
-az account set --subscription "${SU}"
+
 
 ls -l
 
-$JFROG_COMMAND rt dl 
+#insall jfrog
+curl -sS -fL https://getcli.jfrog.io | bash -s v2 "2.46.2"
+chmod +x jfrog
+#sudo mv jfrog /usr/local/bin
+pwd
+$JFROG_COMMAND --version 
+$JFROG_COMMAND config add --artifactory-url=${JFROG_URL} --access-token="cmVmdGtuOjAxOjE3MzUwNDAwOTY6TTM1bXA5ZE1rcHM4b2MzdjgwU1EyeVRJNmtm"
+$JFROG_COMMAND config show
 
-chmod +x ./cicd/_init.sh
-az webapp deploy --resource-group=${RG} --name=${AS} --src-path="./cicd/_init.sh" --type="static"  --target-path="init.sh"
-az webapp deploy source config-zip --resource-group=${RG} --name=${AS}  --src=  --debug
-# az webapp restart --resource-group= --name=  --debug
+JFROG_PROD_REPO=mvn-local-prod-releases
+POM_ARTIFACT_ID="jb-hello-world-maven"
+GROUP_ID=$(mvn --batch-mode -s settings.xml  help:evaluate -Dexpression=project.groupId -q -DforceStdout)
+GROUP_ID_Replaced=${GROUP_ID//.//}
+
+artifact_dir="artifact"
+mkdir $artifact_dir
+$JFROG_COMMAND rt dl "*${JFROG_PROD_REPO}/${GROUP_ID_Replaced}/${POM_ARTIFACT_ID}*.jar" $artifact_dir/ --sort-by created --sort-order=desc --limit=1
+# echo prodjar/${GROUP_ID_Replaced}/${POM_ARTIFACT_ID}/*/*.jar > ./cicd/buildjarNameFile.txt
+cd prodjar
+pwd
+ls -l
+
+# az login --service-principal --username=${USERNAME} --password=${PASSWORD} --tenant=${TENENTID}
+# az account set --subscription "${SU}"
+
+# chmod +x ./cicd/_init.sh
+# az webapp deploy --resource-group=${RG} --name=${AS} --src-path="./cicd/_init.sh" --type="static"  --target-path="init.sh"
+# az webapp deploy source config-zip --resource-group=${RG} --name=${AS}  --src=  --debug
+# # az webapp restart --resource-group= --name=  --debug
