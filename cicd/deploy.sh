@@ -13,7 +13,7 @@ az account set --subscription "${SU}"
 
 ls -l
 
-chmod +x ./_init.sh
-az webapp deploy --resource-group=${RG} --name=${AS} --src-path="./_init.sh" --type="static"  --target-path="init.sh"
+chmod +x ./cicd/_init.sh
+az webapp deploy --resource-group=${RG} --name=${AS} --src-path="./cicd/_init.sh" --type="static"  --target-path="init.sh"
 # az webapp deploy source config-zip --resource-group= --name=  --src=  --debug
 # az webapp restart --resource-group= --name=  --debug
