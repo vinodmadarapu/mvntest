@@ -38,7 +38,7 @@ artifact_dir="artifact"
 mkdir $artifact_dir
 $JFROG_COMMAND rt dl "*${JFROG_PROD_REPO}/${GROUP_ID_Replaced}/${POM_ARTIFACT_ID}*.jar" $artifact_dir/ --sort-by created --sort-order=desc --limit=1
 # echo prodjar/${GROUP_ID_Replaced}/${POM_ARTIFACT_ID}/*/*.jar > ./cicd/buildjarNameFile.txt
-cd artifact_dir
+cd $artifact_dir
 pwd
 ls -l
 
