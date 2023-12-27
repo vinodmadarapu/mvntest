@@ -11,6 +11,14 @@ PASSWORD=cND8Q~oYKod4L0RPwxrNEKjCSbRiqLsqt8ZItdB7
 
 
 ls -l
+JFROG_URL=https://svk2015.jfrog.io/artifactory
+JFROG_COMMAND=${GITHUB_WORKSPACE}/jfrog
+JFROG_DEFAULT_REPO=my-mvn-local-releases
+JFROG_PROD_REPO=mvn-local-prod-releases
+JFROG_PROD_REPO=mvn-local-prod-releases
+POM_ARTIFACT_ID="jb-hello-world-maven"
+GROUP_ID=$(mvn --batch-mode -s settings.xml  help:evaluate -Dexpression=project.groupId -q -DforceStdout)
+GROUP_ID_Replaced=${GROUP_ID//.//}
 
 #insall jfrog
 curl -sS -fL https://getcli.jfrog.io | bash -s v2 "2.46.2"
@@ -21,16 +29,13 @@ $JFROG_COMMAND --version
 $JFROG_COMMAND config add --artifactory-url=${JFROG_URL} --access-token="cmVmdGtuOjAxOjE3MzUwNDAwOTY6TTM1bXA5ZE1rcHM4b2MzdjgwU1EyeVRJNmtm"
 $JFROG_COMMAND config show
 
-JFROG_PROD_REPO=mvn-local-prod-releases
-POM_ARTIFACT_ID="jb-hello-world-maven"
-GROUP_ID=$(mvn --batch-mode -s settings.xml  help:evaluate -Dexpression=project.groupId -q -DforceStdout)
-GROUP_ID_Replaced=${GROUP_ID//.//}
+
 
 artifact_dir="artifact"
 mkdir $artifact_dir
 $JFROG_COMMAND rt dl "*${JFROG_PROD_REPO}/${GROUP_ID_Replaced}/${POM_ARTIFACT_ID}*.jar" $artifact_dir/ --sort-by created --sort-order=desc --limit=1
 # echo prodjar/${GROUP_ID_Replaced}/${POM_ARTIFACT_ID}/*/*.jar > ./cicd/buildjarNameFile.txt
-cd prodjar
+cd artifact_dir
 pwd
 ls -l
 
