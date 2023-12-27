@@ -44,10 +44,10 @@ zip -j ${deploy_zip_name} $artifact_dir/${GROUP_ID_Replaced}/${POM_ARTIFACT_ID}/
 pwd
 ls -l
 
-# az login --service-principal --username=${USERNAME} --password=${PASSWORD} --tenant=${TENENTID}
-# az account set --subscription "${SU}"
+az login --service-principal --username=${USERNAME} --password=${PASSWORD} --tenant=${TENENTID}
+az account set --subscription "${SU}"
 
-# chmod +x ./cicd/_init.sh
-# az webapp deploy --resource-group=${RG} --name=${AS} --src-path="./cicd/_init.sh" --type="static"  --target-path="init.sh"
-# az webapp deploy source config-zip --resource-group=${RG} --name=${AS}  --src=  --debug
+chmod +x ./cicd/_init.sh
+az webapp deploy --resource-group=${RG} --name=${AS} --src-path="./cicd/_init.sh" --type="static"  --target-path="init.sh"
+az webapp deploy source config-zip --resource-group=${RG} --name=${AS}  --src=  --debug
 # # az webapp restart --resource-group= --name=  --debug
