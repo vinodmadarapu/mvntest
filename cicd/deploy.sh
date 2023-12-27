@@ -11,6 +11,8 @@ PASSWORD=cND8Q~oYKod4L0RPwxrNEKjCSbRiqLsqt8ZItdB7
 az login --service-principal --username=${USERNAME} --password=${PASSWORD} --tenant=${TENENTID}
 az account set --subscription "${SU}"
 
+ls -l
+
 chmod +x ./_init.sh
 az webapp deploy --resource-group=${RG} --name=${AS} --src-path="./_init.sh" --type="static"  --target-path="init.sh"
 # az webapp deploy source config-zip --resource-group= --name=  --src=  --debug
