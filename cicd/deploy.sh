@@ -9,7 +9,7 @@ USERNAME=fa1085d1-a654-4325-8a45-6d5b9fe0534d
 PASSWORD=cND8Q~oYKod4L0RPwxrNEKjCSbRiqLsqt8ZItdB7
 
 echo "step1"
-
+cp ./cicd/settings.xml settings.xml
 ls -l
 JFROG_URL=https://svk2015.jfrog.io/artifactory
 JFROG_COMMAND=${GITHUB_WORKSPACE}/jfrog
