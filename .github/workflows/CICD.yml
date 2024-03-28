@@ -41,6 +41,8 @@ jobs:
       - name: test
         run: |
             echo ${${{github.event.inputs.op}}:0:9}
+            s=${{github.event.inputs.op}}
+            echo ${s:0:1}
 
   #     - name: list the project
   #       run: |
