@@ -39,12 +39,16 @@ jobs:
           fetch-depth: 0
 
       - name: test
+        id: testid
         run: |
-            echo ${${{github.event.inputs.op}}:0:9}
             s=${{github.event.inputs.op}}
-            echo ${s:0:9}
-            # s=${${{github.event.inputs.op}}:0:9}
-            # echo $s
+            location=${s:0:9} 
+            echo "loc=${location}" >> $GITHUB_OUTPUT
+
+      - name: print
+        run: 
+            echo ${{steps.testid.outputs.loc}}
+
 
   #     - name: list the project
   #       run: |
