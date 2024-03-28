@@ -20,6 +20,13 @@ on:
           options:
             - east
             - west
+        op:
+          description: reg
+          type: choice
+          required: false
+          options:
+            - test-east-20243504
+            - test-west-20243504            
 
 jobs:
   build:
@@ -31,47 +38,51 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: list the project
+      - name: test
         run: |
-          echo "project structure is"
-          ls -a
+            echo ${{github.event.inputsop}}
 
-      - name: setup maven
-        uses: stCarolas/setup-maven@v4.5
-        with:
-            maven-version: 3.8.7
+  #     - name: list the project
+  #       run: |
+  #         echo "project structure is"
+  #         ls -a
 
-      - name: setup maven action
-        uses: s4u/setup-maven-action@v1.7.0
-        with:
-            java-version: 11.0.17
-            maven-version: 3.8.7
+  #     - name: setup maven
+  #       uses: stCarolas/setup-maven@v4.5
+  #       with:
+  #           maven-version: 3.8.7
 
-      - name: build the project and genaret JAR          
-        run: |
-            chmod +x ./cicd/pipeline.sh
-            ./cicd/pipeline.sh
-        shell: bash            
-        env:
-           GITHuB_WORKSPACE: ${{github.workflow}}
-           ENVIRONMENT: ${{github.event.inputs.environemnt}}
+  #     - name: setup maven action
+  #       uses: s4u/setup-maven-action@v1.7.0
+  #       with:
+  #           java-version: 11.0.17
+  #           maven-version: 3.8.7
 
-  deploy:
-    name: deploy project
-    runs-on: ubuntu-latest
-    needs: build
-    steps:  
-      - name: checkout repository ${GITHuB.REPOSITORY}
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+  #     - name: build the project and genaret JAR          
+  #       run: |
+  #           chmod +x ./cicd/pipeline.sh
+  #           ./cicd/pipeline.sh
+  #       shell: bash            
+  #       env:
+  #          GITHuB_WORKSPACE: ${{github.workflow}}
+  #          ENVIRONMENT: ${{github.event.inputs.environemnt}}
+
+  # deploy:
+  #   name: deploy project
+  #   runs-on: ubuntu-latest
+  #   needs: build
+  #   steps:  
+  #     - name: checkout repository ${GITHuB.REPOSITORY}
+  #       uses: actions/checkout@v4
+  #       with:
+  #         fetch-depth: 0
           
-      - name: bdeploy JAR          
-        run: |
-            chmod +x ./cicd/deploy.sh
-            ./cicd/deploy.sh
-        shell: bash            
-        env:
-           GITHuB_WORKSPACE: ${{github.workflow}}
-           ENVIRONMENT: ${{github.event.inputs.environemnt}}
+  #     - name: bdeploy JAR          
+  #       run: |
+  #           chmod +x ./cicd/deploy.sh
+  #           ./cicd/deploy.sh
+  #       shell: bash            
+  #       env:
+  #          GITHuB_WORKSPACE: ${{github.workflow}}
+  #          ENVIRONMENT: ${{github.event.inputs.environemnt}}
   
