@@ -40,7 +40,7 @@ jobs:
 
       - name: test
         run: |
-            echo ${{github.event.inputsop}}
+            echo ${{github.event.inputs.op}}
 
   #     - name: list the project
   #       run: |
