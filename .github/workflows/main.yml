@@ -1,0 +1,35 @@
+name: Restart Azure App Service
+
+on:
+  workflow_dispatch:  # Allows manual triggering of workflow
+    inputs:
+      resource_group:
+          description: "Resource group name"
+          type: choice
+          required: true
+          options:
+            - RG1
+          default: "RG1"
+      appservice_name:
+          description: "app service name"
+          required: true
+          default: "app"
+
+
+jobs:
+  restart-app-service:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: login to Azure and start App Service
+      run: |
+        az login --service-principal --username  -p= --tenant 
+        az webapp start --name ${{github.event.inputs.appservice_name}} --resource-group ${{github.event.inputs.resource_group}}
+
+    - name: login to Azure and stop App Service
+      run: |
+        az login --service-principal --username  -p= --tenant 
+        az webapp stop --name ${{github.event.inputs.appservice_name}} --resource-group ${{github.event.inputs.resource_group}}  
