@@ -24,12 +24,13 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: login to Azure and start App Service
-      run: |
-        az login --service-principal --username  -p= --tenant 
-        az webapp start --name ${{github.event.inputs.appservice_name}} --resource-group ${{github.event.inputs.resource_group}}
+    - name: login to Azure 
+      run: az login --service-principal --username=fa1085d1-a654-4325-8a45-6d5b9fe0534d  -p="cND8Q~oYKod4L0RPwxrNEKjCSbRiqLsqt8ZItdB7" --tenant=64ceb8ab-f04f-477d-8057-7dfdacb83dcb 
+        
+    # - name: start App Service
+    #   run: az webapp show --name ${{github.event.inputs.appservice_name}} --resource-group ${{github.event.inputs.resource_group}}
 
-    - name: login to Azure and stop App Service
-      run: |
-        az login --service-principal --username  -p= --tenant 
-        az webapp stop --name ${{github.event.inputs.appservice_name}} --resource-group ${{github.event.inputs.resource_group}}  
+    # - name: login to Azure and stop App Service
+    #   run: |
+    #     az login --service-principal --username  -p= --tenant 
+    #     az webapp stop --name ${{github.event.inputs.appservice_name}} --resource-group ${{github.event.inputs.resource_group}}  
