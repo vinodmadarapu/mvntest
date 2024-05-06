@@ -21,6 +21,7 @@ on:
         options:
          - start
          - stop
+         - get
         default: "get"          
 
 
