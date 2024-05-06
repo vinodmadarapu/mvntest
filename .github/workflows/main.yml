@@ -22,7 +22,7 @@ on:
          - start
          - stop
          - show
-        default: "get"          
+        default: "show"          
 
 
 jobs:
