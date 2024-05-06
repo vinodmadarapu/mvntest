@@ -14,6 +14,14 @@ on:
           description: "app service name"
           required: true
           default: "app"
+      action:
+        type: choice
+        description: "start or stop"
+        required: true
+        options:
+         - start
+         - stop
+        default: "get"          
 
 
 jobs:
@@ -28,7 +36,7 @@ jobs:
       run: az login --service-principal --username=fa1085d1-a654-4325-8a45-6d5b9fe0534d  -p="cND8Q~oYKod4L0RPwxrNEKjCSbRiqLsqt8ZItdB7" --tenant=64ceb8ab-f04f-477d-8057-7dfdacb83dcb 
         
     - name: stop App Service
-      run: az webapp start --name ${{github.event.inputs.appservice_name}} --resource-group ${{github.event.inputs.resource_group}}
+      run: az webapp ${{github.event.inputs.action}} --name ${{github.event.inputs.appservice_name}} --resource-group ${{github.event.inputs.resource_group}}
 
     # - name: login to Azure and stop App Service
     #   run: |
