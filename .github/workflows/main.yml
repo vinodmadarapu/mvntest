@@ -1,4 +1,4 @@
-name: ${{github.event.inputs.action}} ${{github.event.inputs.appservice_name}} Azure App Service
+name: Azure App Service
 
 on:
   workflow_dispatch:  # Allows manual triggering of workflow
