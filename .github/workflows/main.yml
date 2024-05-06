@@ -39,7 +39,6 @@ jobs:
     - name: ${{github.event.inputs.action}} App Service
       run: az webapp ${{github.event.inputs.action}} --name ${{github.event.inputs.appservice_name}} --resource-group ${{github.event.inputs.resource_group}}
 
-    # - name: login to Azure and stop App Service
-    #   run: |
-    #     az login --service-principal --username  -p= --tenant 
-    #     az webapp stop --name ${{github.event.inputs.appservice_name}} --resource-group ${{github.event.inputs.resource_group}}  
+    - name: Remove Folder
+      run: |
+        az webapp deployment source delete --name ${{github.event.inputs.appservice_name}} --resource-group ${{github.event.inputs.resource_group}} --path /Home/dyno
