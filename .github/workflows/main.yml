@@ -39,15 +39,18 @@ jobs:
     - name: ${{github.event.inputs.action}} App Service
       run: az webapp ${{github.event.inputs.action}} --name ${{github.event.inputs.appservice_name}} --resource-group ${{github.event.inputs.resource_group}}
 
-    - name: Create remote connection to Azure App Service
-      run: |
-        az webapp create-remote-connection --name test05032024 --resource-group RG1 --output json > connection.json
-        sleep 15
-        echo "::set-output name=connectionString::$(jq -r .connectionString connection.json)"
+    - name: copy script
+      run: az webapp deploy --name test05032024 --resource-group RG1 --src-path="myscript.sh" --type="static" --target-path="init.sh"
 
-    - name: Copy script to Azure App Service
-      run: |
-        scp -P $(echo ${{ steps.connection.outputs.connectionString }} | sed -n 's/.*:\([0-9]\{1,\}\).*/\1/p') -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null myscript.sh root@127.0.0.1:/home/site/wwwroot/
+    # - name: Create remote connection to Azure App Service
+    #   run: |
+    #     az webapp create-remote-connection --name test05032024 --resource-group RG1 --output json > connection.json
+    #     sleep 15
+    #     echo "::set-output name=connectionString::$(jq -r .connectionString connection.json)"
+
+    # - name: Copy script to Azure App Service
+    #   run: |
+    #     scp -P $(echo ${{ steps.connection.outputs.connectionString }} | sed -n 's/.*:\([0-9]\{1,\}\).*/\1/p') -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null myscript.sh root@127.0.0.1:/home/site/wwwroot/
         
     # - name: Copy script to Azure App Service
     #   run: |
