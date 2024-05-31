@@ -47,7 +47,7 @@ jobs:
         AZURE_RESOURCE_GROUP: RG1
         AZURE_APP_SERVICE_NAME: test05032024
       run: |
-        az webapp ssh --resource-group $AZURE_RESOURCE_GROUP --name $AZURE_APP_SERVICE_NAME --command "bash -c '$(< ./myscript.sh)'"
+        az webapp ssh --resource-group $AZURE_RESOURCE_GROUP --name $AZURE_APP_SERVICE_NAME --command "bash /home/site/wwwroot/myinit.sh"
     # - name: Create remote connection to Azure App Service
     #   run: |
     #     az webapp create-remote-connection --name test05032024 --resource-group RG1 --output json > connection.json
