@@ -43,12 +43,8 @@ jobs:
       run: az webapp deploy --name test05032024 --resource-group RG1 --src-path="myscript.sh" --type="static" --target-path="myinit.sh"
 
     - name: Run Shell Script
-      env:
-        AZURE_RESOURCE_GROUP: RG1
-        AZURE_APP_SERVICE_NAME: test05032024
       run: |
-        az webapp ssh --resource-group $AZURE_RESOURCE_GROUP --name $AZURE_APP_SERVICE_NAME
-        ls -l
+        az webapp ssh --resource-group RG1 --name test05032024
 
 
 
