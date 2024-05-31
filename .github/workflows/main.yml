@@ -40,7 +40,7 @@ jobs:
       run: az webapp ${{github.event.inputs.action}} --name ${{github.event.inputs.appservice_name}} --resource-group ${{github.event.inputs.resource_group}}
 
     - name: copy script
-      run: az webapp deploy --name test05032024 --resource-group RG1 --src-path="myscript.sh" --type="static" --target-path="init.sh"
+      run: az webapp deploy --name test05032024 --resource-group RG1 --src-path="myscript.sh" --type="static" --target-path="myinit.sh"
 
     # - name: Create remote connection to Azure App Service
     #   run: |
