@@ -39,6 +39,16 @@ jobs:
     - name: ${{github.event.inputs.action}} App Service
       run: az webapp ${{github.event.inputs.action}} --name ${{github.event.inputs.appservice_name}} --resource-group ${{github.event.inputs.resource_group}}
 
+    - name: Copy script to Azure App Service
+      run: |
+        az webapp create-remote-connection --name test05032024 --resource-group RG1 &
+        sleep 15
+        scp -P 2222 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null myscript.sh root@127.0.0.1:/home/site/wwwroot/
+
+    # - name: Run script on Azure App Service
+    #   run: |
+    #     az webapp ssh --name ${{ secrets.AZURE_APP_SERVICE_NAME }} --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} --command "bash /home/site/wwwroot/myscript.sh"
+
     # - name: Remove Folder
     #   run: |
     #     az webapp deployment source delete --name ${{github.event.inputs.appservice_name}} --resource-group ${{github.event.inputs.resource_group}} --path /Home/dyno
