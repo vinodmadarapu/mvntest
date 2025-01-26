@@ -28,7 +28,7 @@ jobs:
 
     - name: Set up kubectl
       run: |
-        aws eks update-kubeconfig --name eks01252025 --region us-east-1
+        aws eks update-kubeconfig --name thoughtful-lofi-crow --region us-east-1
 
     - name: Deploy to EKS
       run: |
