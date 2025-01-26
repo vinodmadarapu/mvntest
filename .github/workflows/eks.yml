@@ -31,9 +31,14 @@ jobs:
       run: |
         aws eks update-kubeconfig --name thoughtful-lofi-crow --region us-east-1
 
-    - name: Deploy to EKS
+    - name: Get pods
       run: |
-        kubectl get pods      
+        kubectl get pods    
+
+    - name: Get nodes
+      run: |
+        kubectl get pods
+        ls -l
 
     # - name: Deploy to EKS
     #   run: |
