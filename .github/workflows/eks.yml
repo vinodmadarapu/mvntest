@@ -37,7 +37,7 @@ jobs:
 
     - name: Get nodes
       run: |
-        kubectl get pods
+        kubectl get nodes
         ls -l
 
     # - name: Deploy to EKS
