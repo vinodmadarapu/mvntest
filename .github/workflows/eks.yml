@@ -29,7 +29,7 @@ jobs:
 
     - name: Set up kubectl
       run: |
-        aws eks update-kubeconfig --name thoughtful-lofi-crow --region us-east-1
+        aws eks update-kubeconfig --name wonderful-jazz-ant --region us-east-1
 
     - name: Get pods
       run: |
