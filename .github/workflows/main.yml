@@ -40,7 +40,10 @@ jobs:
     - name: ${{github.event.inputs.action}} App Service
       run: az webapp ${{github.event.inputs.action}} --name ${{github.event.inputs.appservice_name}} --resource-group ${{github.event.inputs.resource_group}}
 
-
+    - name: config App Service
+      run: az webapp config appsettings set --resource-group ${{github.event.inputs.resource_group}} --name ${{github.event.inputs.appservice_name}} --settings key1=valuenew
+    
+    
     # - name: copy script
     #   run: az webapp deploy --name test05032024 --resource-group RG1 --src-path="myscript.sh" --type="static" --target-path="myinit.sh"
 
