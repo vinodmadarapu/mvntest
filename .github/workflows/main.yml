@@ -34,7 +34,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: login to Azure 
-      run: az login --service-principal --username=fa1085d1-a654-4325-8a45-6d5b9fe0534d  -p="c418Q~QF7Io1X~Ik2.qNr3fayGH-mzx.tgs~Qcbt" --tenant=64ceb8ab-f04f-477d-8057-7dfdacb83dcb 
+      run: az login --service-principal --username=4cab3523-0066-4970-9043-24660ffc6f7a  -p="oj38Q~aARtXO0finllTACSnFqZbtMBanPUOvsazX" --tenant=44e4dc69-618c-4f06-bfe6-116d949e0873 
         
     # - name: ${{github.event.inputs.action}} App Service
     #   run: az webapp ${{github.event.inputs.action}} --name ${{github.event.inputs.appservice_name}} --resource-group ${{github.event.inputs.resource_group}}
