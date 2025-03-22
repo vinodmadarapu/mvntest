@@ -9,6 +9,7 @@ on:
           required: true
           options:
             - RG1
+            - TEST03212025_group
           default: "RG1"
       appservice_name:
           description: "app service name"
