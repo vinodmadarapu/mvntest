@@ -40,11 +40,16 @@ jobs:
     - name: ${{github.event.inputs.action}} App Service
       run: az webapp ${{github.event.inputs.action}} --name ${{github.event.inputs.appservice_name}} --resource-group ${{github.event.inputs.resource_group}}
 
-    - name: config App Service
+    - name: config App Service on East region
       run: |
         az webapp config appsettings set --resource-group ${{github.event.inputs.resource_group}} --name test03312025 --settings key1=valuenewes
         az webapp config appsettings set --resource-group ${{github.event.inputs.resource_group}} --name test03312026 --settings key1=valuenewes
-    
+
+    - name: config App Service on West region
+      run: |
+        az webapp config appsettings set --resource-group ${{github.event.inputs.resource_group}} --name test03312025 --settings key1=valuenewes
+        az webapp config appsettings set --resource-group ${{github.event.inputs.resource_group}} --name test03312026 --settings key1=valuenewes
+        
     
     # - name: copy script
     #   run: az webapp deploy --name test05032024 --resource-group RG1 --src-path="myscript.sh" --type="static" --target-path="myinit.sh"
