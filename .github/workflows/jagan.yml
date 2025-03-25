@@ -1,0 +1,23 @@
+name: jagan wf
+
+on:
+  workflow_dispatch:  # Allows manual triggering of workflow
+  
+
+
+jobs:
+  Ping-app-service:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: ping command
+      run: ping google.com
+
+  Cpoy-output:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2    
+    - name: copy data to a file
+      run: echo "output" > output.txt
