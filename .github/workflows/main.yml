@@ -3,7 +3,7 @@ name: Azure App Service
 on:
   workflow_dispatch:  # Allows manual triggering of workflow
     inputs:
-      environemt:
+      env:
           description: "env"
           type: choice
           required: true
@@ -37,6 +37,7 @@ on:
 
 jobs:
   restart-app-service:
+    environment: ${{github.event.inputs.env}}
     runs-on: ubuntu-latest
 
     steps:
@@ -44,7 +45,9 @@ jobs:
       uses: actions/checkout@v2
 
     - name: login to Azure 
-      run: az login --service-principal --username=7abfcd5a-ffc8-40eb-b59d-488d68ebf6c0  -p="oj38Q~aARtXO0finllTACSnFqZbtMBanPUOvsazX" --tenant=44e4dc69-618c-4f06-bfe6-116d949e0873 
+      run: az login --service-principal --username= ${{ secrets.username }}  -p=" ${{ secrets.password }}" --tenant= ${{ secrets.tenant }} 
+    #  az login --service-principal --username=7abfcd5a-ffc8-40eb-b59d-488d68ebf6c0  -p="oj38Q~aARtXO0finllTACSnFqZbtMBanPUOvsazX" --tenant=44e4dc69-618c-4f06-bfe6-116d949e0873 
+
         
     - name: ${{github.event.inputs.action}} App Service
       run: az webapp ${{github.event.inputs.action}} --name ${{github.event.inputs.appservice_name}} --resource-group ${{github.event.inputs.resource_group}}
