@@ -53,7 +53,7 @@ jobs:
       run: echo "appservice_name=localapp" >> $GITHUB_ENV
       
     - name: Use output from previous step
-      run: echo "The output was ${{ env.appservice_name }}"
+      run: echo "The output was ${{github.event.inputs.appservice_name}}"
         
     - name: ${{github.event.inputs.action}} App Service
       run: az webapp ${{github.event.inputs.action}} --name ${{github.event.inputs.appservice_name}} --resource-group ${{github.event.inputs.resource_group}}
