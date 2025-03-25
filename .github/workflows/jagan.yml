@@ -11,8 +11,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-    - name: ping command
-      run: ping google.com
+    - name: pingu command
+      run: pingu google.com
 
   Cpoy-output:
     runs-on: ubuntu-latest
